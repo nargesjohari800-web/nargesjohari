@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>در حال بارگذاری...</title>
+  <style>
+    /* 🎨 رنگ‌های اصلی */
+    :root {
+      --bg: #0f1724;
+      --accent: #4bc3f7;
+    }
+
+    /* استایل پایه */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: white;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* 🔵 دایره لودینگ */
+    .loader {
+      width: 70px;
+      height: 70px;
+      border: 5px solid rgba(75, 195, 247, 0.2);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* متن */
+    .loading-text {
+      font-size: 1.2rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+      animation: blink 1.5s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    /* 📱 ریسپانسیو برای موبایل */
+    @media (max-width: 480px) {
+      .logo-container img {
+        margin-top: 80px;
+        /* فاصله کمتر برای موبایل */
+      }
+    }
+
+    .loader {
+      width: 50px;
+      height: 50px;
+      border-width: 4px;
+    }
+
+    .loading-text {
+      font-size: 1rem;
+    }
+
+
+
+    @keyframes appear {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.95);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+    }
+
+    .logo-container {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 20px;
+      /* فاصله از پایین */
+    }
+
+    .logo-container img {
+      width: 60%;
+      max-width: 600px;
+      margin-top: 0;
+      /* حذف شد */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="logo-container">
+    <img src="./logonj.png" alt="لوگو">
+  </div>
+
+  <!-- لودینگ -->
+  <div class="loader"></div>
+  <div class="loading-text">در حال بارگذاری...</div>
+
+
+
+  <script>
+    // 🕒 شبیه‌سازی لودینگ ۲ ثانیه‌ای قبل از رفتن به سایت اصلی
+    setTimeout(() => {
+      window.location.href = "main.html"; // مسیر صفحه اصلی سایتت
+    }, 2000);
+  </script>
+
+</body>
+
+</html>

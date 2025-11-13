@@ -1,0 +1,1219 @@
+/* =================== ریشه و متغیرها =================== */
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #0ABAB5;
+  --muted: #9aa4b2;
+  --font: 'Vazirmatn', sans-serif;
+}
+
+/* =================== تنظیمات پایه =================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font);
+  background: linear-gradient(180deg, var(--bg), #0f1724);
+  color: #e6eef6;
+  scroll-behavior: smooth;
+}
+
+
+/* =================== Layout اصلی =================== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =================== سایدبار =================== */
+.sidebar {
+  width: 300px;
+  background: rgba(44, 44, 44, 0.4);
+  backdrop-filter: blur(10px);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  height: 93vh;
+}
+
+/* پروفایل */
+.profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/* =================== بزرگ و کوچک شدن عکس پروفایل =================== */
+/* #portfolio {
+  cursor: pointer;
+  object-fit: cover;
+  z-index: 1; 
+  transition: 1s;
+}
+
+#portfolio.enlarged {
+  width: 240px;
+  height: 240px;
+  border-radius: 16px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 2001; 
+  box-shadow: 0 0 40px rgba(10, 186, 181, 0.4);
+} */
+
+/* =================== بزرگ و کوچک شدن عکس پروفایل =================== */
+#portfolio {
+  cursor: pointer;
+  object-fit: cover;
+  z-index: 1;
+  transition: 1s;
+  max-width: 90%;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* حالت بزرگ‌شده */
+#portfolio.enlarged {
+  width: 240px;
+  height: 240px;
+  border-radius: 16px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  z-index: 2001;
+  box-shadow: 0 0 40px rgba(10, 186, 181, 0.4);
+}
+
+/* =================== حالت‌های واکنش‌گرا =================== */
+
+/* موبایل */
+@media (max-width: 480px) {
+  #portfolio.enlarged {
+    width: 160px;
+    height: 160px;
+    top: 160px;
+  }
+}
+
+/* تبلت */
+@media (min-width: 481px) and (max-width: 768px) {
+  #portfolio.enlarged {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* دسکتاپ */
+@media (min-width: 769px) {
+  #portfolio.enlarged {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+
+
+/* لیست آیتم‌ها */
+.list-item {
+  padding: 10px;
+  border-bottom: 1px solid #444;
+  font-size: 14px;
+}
+
+/* مهارت‌ها */
+.skills h4 {
+  margin-bottom: 10px;
+}
+
+.language {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* دایره مهارت */
+.circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.circle svg {
+  transform: rotate(-90deg);
+  width: 120px;
+  height: 120px;
+}
+
+.circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.circle .bg {
+  stroke: #333;
+}
+
+.circle .progress {
+  stroke: var(--accent);
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 1.6s ease-in-out;
+}
+
+.circle .percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+}
+
+.circle p {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* نوار مهارت */
+.tool {
+  margin-bottom: 15px;
+}
+
+.tool p {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.progress-bar {
+  background: #222;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 7px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  width: 0;
+}
+
+/* =================== محتوای اصلی =================== */
+.content {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+}
+
+/* لوگو */
+#logo {
+  width: 100px;
+  height: auto;
+  float: left;
+  /* سمت چپ */
+  margin-left: 79;
+  /* حذف فاصله از چپ */
+  margin-right: 20px;
+  /* کمی فاصله از متن سمت راست */
+  cursor: pointer;
+  animation: glowPulse 3s infinite;
+}
+
+/* انیمیشن نور لوگو */
+@keyframes glowPulse {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0px rgba(255, 255, 255, 0.5));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
+  }
+}
+
+/* Tooltip */
+#tooltip {
+  position: fixed;
+  display: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+/* تایپینگ انیمیشن */
+.typing {
+  font-size: 2rem;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(30) forwards, blink 0.75s step-end infinite;
+  margin-bottom: 16px;
+  height: 48px;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 25ch
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+/* =================== نمونه کارها =================== */
+.portfolio-wrap {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+
+/* ------------------ Card ------------------ */
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.28s cubic-bezier(.2, .9, .3, 1), box-shadow 0.28s, border-color 0.28s;
+}
+
+/* Hover دسکتاپ */
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(10, 186, 181, 0.2);
+}
+
+/* کلاس فعال JS برای موبایل */
+.card.hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px rgba(10, 186, 181, 0.2);
+}
+
+/* واکنشگرایی موبایل */
+@media (max-width:600px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+    /* ستون تک */
+    gap: 16px;
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 12px;
+  }
+}
+
+.thumb {
+  height: 110px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* برای مقاله  */
+/* ===== بخش اصلی ===== */
+.center {
+  width: 100%;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 28px;
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.item {
+  color: #fff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.28s cubic-bezier(.2, .9, .3, 1), box-shadow 0.28s, border-color 0.28s;
+}
+
+.item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.item h3 {
+  margin-bottom: 10px;
+  color: #f0f7fc;
+}
+
+.item p {
+  flex-grow: 1;
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 14px;
+  color: #b5c7ce;
+}
+
+.btn-download {
+  background-color: #2980b9;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-download:hover {
+  background-color: #6060f4;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* =================== فرم تماس =================== */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid rgb(10, 186, 181);
+  background: transparent;
+  color: inherit;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+
+/* ------------------ Button ------------------ */
+.btn {
+  padding: 12px 35px;
+  font-size: 18px;
+  background: transparent;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.4s, background-color 0.4s, transform 0.2s, box-shadow 0.2s;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(10, 186, 181);
+}
+
+/* افکت hover دسکتاپ */
+.btn:hover {
+  color: white;
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(10, 186, 181, 0.3);
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, #2a85fd, transparent);
+  transition: left 0.6s;
+}
+
+.btn:hover::before {
+  left: 80%;
+}
+
+/* کلاس فعال JS برای موبایل */
+.btn.active {
+  color: white;
+  background-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(10, 186, 181, 0.3);
+}
+
+/* واکنشگرایی موبایل */
+
+
+/* =================== footer =================== */
+
+
+/* فعال روی موبایل */
+#insta.active,
+#gmail.active,
+#linkedin.active,
+#telegram.active,
+#website.active {
+  color: white;
+  transition: color 0.3s;
+}
+
+
+footer {
+  padding: 24px 48px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer i {
+  font-size: 24px;
+  color: var(--muted);
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+footer i:hover {
+  color: white;
+}
+
+/* =================== دکمه موبایل =================== */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1100;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* =================== واکنشگرایی =================== */
+@media (max-width:980px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: -1;
+  }
+}
+
+@media (max-width:600px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+@media (max-width:480px) {
+  .typing {
+    font-size: 18px;
+  }
+
+  .circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .circle svg {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* =================== features =================== */
+.features {
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.feature {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature h3 {
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =================== Hover =================== */
+.feature:hover {
+  transform: translateY(-6px);
+  /* بالاکشیدن */
+  box-shadow: 2px 5px 30px rgba(10, 186, 181, 0.16);
+  /* سایه */
+  border-color: var(--accent);
+  /* تغییر رنگ مرز */
+  cursor: pointer;
+}
+
+/* واکنشگرایی برای موبایل */
+@media (max-width:600px) {
+  .features {
+    grid-template-columns: 1fr;
+    /* ستون تک برای موبایل */
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .feature h3 {
+    font-size: 14px;
+  }
+
+  .feature p {
+    font-size: 13px;
+  }
+}
+
+.feature.hover {
+  transform: translateY(-6px);
+  box-shadow: 2px 5px 30px rgba(10, 186, 181, 0.16);
+  border-color: var(--accent);
+}
+
+
+@media (max-width: 980px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: -1;
+  }
+}
+
+
+/* ---------- ریسپانسیو بین 980px تا 592px ---------- */
+@media (max-width: 980px) and (min-width: 592px) {
+  .layout {
+    flex-direction: row;
+    /* کنار هم باقی بمانند */
+    gap: 20px;
+    /* فاصله بین سایدبار و کانتنت */
+  }
+
+  .sidebar {
+    width: 300px;
+    /* همان عرض دسکتاپ */
+    position: relative;
+    /* بدون fixed */
+    transform: none;
+    /* بدون انیمیشن کشیدن */
+    height: auto;
+    overflow-y: auto;
+  }
+
+  .content {
+    flex: 1;
+    /* باقیمانده فضا را بگیرد */
+    min-width: 0;
+    /* جلوگیری از overflow */
+    padding: 20px;
+  }
+
+  #logo {
+    float: left;
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  .card,
+  .content * {
+    max-width: 100%;
+    word-wrap: break-word;
+    /* جلوگیری از بیرون زدن متن */
+  }
+
+  .mobile-toggle {
+    display: none;
+    /* دکمه موبایل مخفی باشد */
+  }
+}
+
+/* از 980 تا 592 همان حالت دسکتاپ حفظ شود */
+@media (max-width: 980px) and (min-width: 592px) {
+  .layout {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 300px;
+    position: relative;
+    transform: none;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .mobile-toggle {
+    display: none;
+  }
+}
+
+/* زیر 592px حالت موبایل */
+@media (max-width: 591px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transform: translateX(100%);
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  .mobile-toggle {
+    display: block;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1100;
+    background: #171F2CE8;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+/* ریسپانسیو متن برای اندازه‌های کوچک */
+@media (max-width: 780px) {
+  body {
+    font-size: 14px;
+  }
+
+  .content,
+  .content p,
+  .content h1,
+  .content h2,
+  .content h3,
+  .content h4,
+  .content h5 {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+}
+
+/* پیغام موبایل */
+#mobileTooltip {
+  display: none;
+  position: absolute;
+  font-size: 14px;
+  z-index: 9999;
+  max-width: 260px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease;
+  background: rgba(44, 44, 44, 0.4);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/*  یزای ریسپانسیو کرئن دایره موبایل */
+/* ریسپانسیو برای موبایل کوچک */
+@media (max-width: 480px) {
+  .circle {
+    width: 80px;
+    /* عرض کوچک */
+    aspect-ratio: 1/1;
+    /* حفظ نسبت دایره */
+  }
+
+  .circle svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .circle circle.bg,
+  .circle circle.progress {
+    cx: 50%;
+    /* مرکز SVG همیشه وسط */
+    cy: 50%;
+    r: 36;
+    /* شعاع کمی کوچک‌تر برای 80px */
+    stroke-width: 8;
+    /* ضخامت مناسب */
+  }
+
+  .circle .percent {
+    font-size: 12px;
+    /* متن درصد کمی کوچک‌تر */
+  }
+}
+
+.cert-section {
+  display: none;
+  /* اول مخفی باشه */
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #0b1220;
+}
+
+/* =================== Responsive Certificates Section =================== */
+.btn {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* دکمه مشاهده گواهینامه‌ها در همه اندازه‌ها */
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
+    margin-top: 16px;
+  }
+
+  #certs {
+    padding: 10px;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  #certs ul {
+    padding-right: 18px;
+  }
+
+  #certs li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  #certs {
+    font-size: 13px;
+    line-height: 1.5;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/*  نمونخ پکیج آک.زشی */
+#courses {
+  margin: 61px;
+  text-align: center;
+  align-items: center;
+
+}
+
+#courses h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#courses .desc {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.course-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.course {
+  background: #0f1724;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgb(0, 0, 0);
+  overflow: hidden;
+  transition: transform .2s;
+  width: 681px;
+  height: 204px;
+
+}
+
+.course:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgb(10, 186, 181);
+  cursor: pointer;
+}
+
+.course img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 1rem;
+}
+
+.info h3 {
+  font-size: 1.1rem;
+  margin-bottom: .5rem;
+}
+
+.coming-soon .placeholder {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f1724;
+  color: #888;
+}
+
+/*  ریسپانسزیو  */
+
+/* اندازه پیش‌فرض دکمه */
+#langSwitch {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+/* وقتی صفحه کوچک‌تر از 768px شد */
+@media (max-width: 768px) {
+  #langSwitch {
+    padding: 12px 24px; /* بزرگ‌تر شدن دکمه */
+    font-size: 18px;    /* متن بزرگ‌تر */
+    border-radius: 10px;
+    margin: 20px;
+  }
+}
+
+/* وقتی صفحه خیلی کوچک‌تر از 480px شد */
+@media (max-width: 480px) {
+  #langSwitch {
+    padding: 16px 28px;
+    font-size: 20px;
+  }
+}
+
+/* Container کارت‌ها */
+.course-grid {
+  display: grid;
+  gap: 24px;
+  max-width: 1200px;
+  /* محدود کردن عرض کل grid */
+  margin: 0 auto;
+  /* وسط چین کردن */
+}
+
+/* کارت‌ها */
+.course {
+  width: 100%;
+  max-width: 400px;
+  /* هر کارت بیشتر از 400px نشه */
+  box-sizing: border-box;
+}
+
+/* موبایل کوچک */
+@media (max-width: 480px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .course img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .course h3 {
+    font-size: 1rem;
+  }
+
+  .course .btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    width: 100%;
+  }
+}
+
+/* موبایل بزرگ / تبلت */
+@media (min-width: 481px) and (max-width: 768px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .course h3 {
+    font-size: 1.1rem;
+  }
+
+  .course .btn {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+}
+
+/* دسکتاپ کوچک */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .course h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* دسکتاپ بزرگ */
+@media (min-width: 1201px) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .course h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* خیلی بزرگ (>1790px) */
+@media (min-width: 1791px) {
+  .course-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1600px;
+    /* محدود کردن کل grid */
+    margin: 0 auto;
+  }
+
+  .course {
+    max-width: 400px;
+    /* هر کارت حداکثر 400px */
+  }
+}
+
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cert-list li {
+  background: #021129;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(10, 186, 181);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cert-list li:hover {
+  background: #283852b6;
+}
+
+.cert-title {
+  font-weight: 600;
+  color: white;
+}
+
+/* عکس گواهینامه در حالت عادی پنهان است */
+/* کانتینر تصویر گواهینامه */
+.cert-image {
+  display: none;
+  /* تنها زمانی که li فعال است نمایش داده می‌شود */
+  margin-top: 10px;
+  text-align: center;
+  overflow: hidden;
+  /* جلوگیری از بیرون زدن تصویر هنگام زوم */
+  perspective: 1000px;
+  /* برای ایجاد عمق */
+  position: relative;
+  cursor: zoom-in;
+}
+
+/* تصویر داخل کانتینر */
+.cert-image img {
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  transform-origin: center;
+  object-fit: cover;
+}
+
+/* افکت زوم هنگام هاور */
+.cert-image img:hover {
+  transform: scale(1.4);
+  /* بزرگ شدن 40٪ */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  /* سایه بیشتر */
+}
+
+
+/* وقتی کلاس active اضافه شد، تصویر نمایش داده می‌شود */
+.cert-list li.active .cert-image {
+  display: block;
+}
+
+/* موبایل: لمس برای زوم */
+@media (max-width: 768px) {
+  .cert-image img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
+  }
+
+  .cert-image img.zoomed {
+    transform: scale(1.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    cursor: zoom-out;
+  }
+}
+footer a {
+    text-decoration: none;
+}
+
+
+
+
+
+.portfolio .card .thumb {
+  width: 100%;          /* عرض کارت رو پر کنه */
+  height: 200px;        /* ارتفاع دلخواه کارت */
+  overflow: hidden;     /* هر چیزی بیرون ارتفاع رو مخفی کنه */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio .card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* عکس رو بزرگ کنه ولی نسبت حفظ بشه و بریده نشه */
+  display: block;
+}
+
+
+.portfolio .card .thumb {
+  width: 100%;          /* عرض کارت رو پر کنه */
+  height: 200px;        /* ارتفاع دلخواه کارت */
+  overflow: hidden;     /* هر چیزی بیرون ارتفاع رو مخفی کنه */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio .card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* عکس رو بزرگ کنه ولی نسبت حفظ بشه و بریده نشه */
+  display: block;
+}

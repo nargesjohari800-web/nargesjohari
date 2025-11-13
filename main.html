@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>نرگس جوهری — طراح وب و سئو</title>
+  <meta name="description"
+    content="رزومه نرگس جوهری، طراح وب و متخصص سئو. با مدرک کارشناسی مهندسی کامپیوتر نمونه کارها و مهارت‌هایم را مشاهده کنید و با من تماس بگیرید.">
+
+  <link rel="icon" href="./logonj.png" type="image/png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"
+    type="text/css" />
+  <script src="https://unpkg.com/i18next@21.9.1/dist/umd/i18next.min.js"></script>
+</head>
+
+<body>
+
+  <!-- دکمه منوی موبایل -->
+  <button class="mobile-toggle" onclick="toggleSidebar()">☰ منو</button>
+  <div class="layout">
+    <!-- پنل سمت راست -->
+    <aside class="sidebar" id="sidebar">
+      <div class="profile">
+        <img src="./008.jpg" alt="profile" id="portfolio">
+        <h3 data-i18n="name">نرگس جوهری</h3>
+        <p data-i18n="role">طراح وب (FrontEnd) و سئو (SEO)</p>
+      </div>
+      <div class="list-item" data-i18n="location">محل سکونت :بندر گناوه</div>
+      <div class="list-item" data-i18n="workplace">محل کار: دزفول</div>
+      <div class="list-item" data-i18n="age">سن: 23</div>
+      <div class="skills">
+        <h4 data-i18n="skills">مهارت‌ها</h4>
+        <div class="language">
+          <div class="circle" style="--percent:100">
+            <svg viewBox="0 0 120 120">
+              <circle class="bg" cx="60" cy="60" r="45"></circle>
+              <circle class="progress" cx="60" cy="60" r="45"></circle>
+            </svg>
+            <div class="percent">100%</div>
+            <p style="text-align:center;margin-top:5px;" data-i18n="frontend">FrontEnd</p>
+          </div>
+          <div class="circle" style="--percent:100">
+            <svg viewBox="0 0 120 120">
+              <circle class="bg" cx="60" cy="60" r="45"></circle>
+              <circle class="progress" cx="60" cy="60" r="45"></circle>
+            </svg>
+            <div class="percent">100%</div>
+            <p style="text-align:center;margin-top:5px;" data-i18n="seo">SEO</p>
+          </div>
+        </div>
+      </div>
+      <!-- مهارت‌ها با progress-bar -->
+      <div class="tool">
+        <br>
+        <p data-i18n="htmlcss">HTML, CSS - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="javascript">JavaScript - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="figma">Figma - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="uiux">UI/UX - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="gsc">Google Search Console - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="ahref">Ahref Webmaster Tools - 95%</p>
+        <div class="progress-bar"><span data-percent="95"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="screamingfrog">Screaming Frog - 90%</p>
+        <div class="progress-bar"><span data-percent="90"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="vscode">Visual Studio Code - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="wordpress">WordPress - 95%</p>
+        <div class="progress-bar"><span data-percent="95"></span></div>
+      </div>
+      <hr>
+      <h4 data-i18n="additionalSkills">مهارت‌های تکمیلی</h4>
+      <div class="tool">
+        <p data-i18n="googlesheet">Google Sheet - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="python">Python - 60%</p>
+        <div class="progress-bar"><span data-percent="60"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="googleads">Google Ads - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="analytics">Google Analytics - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="icdl">ICDL - 100%</p>
+        <div class="progress-bar"><span data-percent="100"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="english">English - 50%</p>
+        <div class="progress-bar"><span data-percent="50"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="french">Français - 10%</p>
+        <div class="progress-bar"><span data-percent="10"></span></div>
+      </div>
+      <div class="tool">
+        <p data-i18n="powershell">PowerShell - 70%</p>
+        <div class="progress-bar"><span data-percent="70"></span></div>
+      </div>
+      <div class="tool">
+        <p> Gengo - 50%</p>
+        <div class="progress-bar"><span data-percent="50"></span></div>
+      </div>
+      <div class="tool">
+        <p> CCNA - 40%</p>
+        <div class="progress-bar"><span data-percent="40"></span></div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <img src="./logonj.png" alt="لوگو" id="logo">
+      <div id="tooltip"
+        style="position:absolute;display:none;background: rgba(44, 44, 44, 0.4);
+          backdrop-filter: blur(10px);color:white;padding:5px 10px;border-radius:5px;font-size:12px;pointer-events:none;z-index:1000;">
+        <span data-i18n="tooltip">طراحی سایت و سئو پذیرا هستم</span>
+      </div>
+      <h1 class="typing" data-i18n="heroTitle">طراح وب | سئو کار —</h1>
+      <p data-i18n="heroIntro">من یک طراح و توسعه‌دهنده وب هستم که عاشق طراحی‌های مدرن و انیمیشن‌های زیباست. هدفم اینه
+        که تجربه کاربری شیک و لذت‌بخش ایجاد کنم.</p>
+      <!-- نمونه کارها -->
+      <section id="portfolio" class="portfolio-wrap">
+        <div id="portfolioGrid" class="portfolio">
+
+
+          <article class="card" tabindex="0">
+            <div class="thumb">
+              <img src="Screenshot 2025-11-12 120444.png">
+            </div>
+            <div class="title" data-i18n="project1Title">seo— فروشگاه پکیج سئو</div>
+            <div class="desc" data-i18n="project1Desc">طراحی فرانت اند و رابط کاربری و سئو بهیمه سازی یابت .
+            </div>
+            <div class="tags">
+              <span class="tag">Front-end </span>
+              <span class="tag">seo</span>
+              <span class="tag">ui/ux</span>
+              <span class="tag">Figma</span>
+            </div>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="thumb">
+              <img src="Screenshot (304).png">
+            </div>
+            <div class="title" data-i18n="project1Title1">طراحی صحفه ساخت اکانت </div>
+            <div class="desc" data-i18n="project1Desc1">طراحی رابط کاربری </div>
+            <div class="tags">
+              <span class="tag">Figma</span>
+              <span class="tag">ui/ux</span>
+            </div>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="thumb">
+              <img src="Screenshot (299).png">
+            </div>
+            <div class="title" data-i18n="project1Title2"> مقاله ماشین های کلاسیک</div>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Front-end </span>
+              <span class="tag">Figma</span>
+            </div>
+          </article>
+
+          <article class="card" tabindex="0">
+            <div class="thumb">
+              <img src="Screenshot (302).png">
+            </div>
+            <div class="title" data-i18n="project1Title3"> سایت زندگی نامه کوروش کبیر</div>
+            <div class="desc" data-i18n="project1Desc3">طراحی انیمیشنی و رابط کاربری .
+            </div>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Tailwind</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Front-end </span>
+              <span class="tag">ui/ux</span>
+            </div>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="thumb">
+              <img src="Screenshot 2025-11-13 103244.png">
+            </div>
+            <div class="title" data-i18n="project1Title4"> سایت انجمن </div>
+            <div class="desc" data-i18n="project1Desc4">طراحی رابط کاربری و تجربه کاربری برای پلتفرم تجارت الکترونیک.
+            </div>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Tailwind</span>
+              <span class="tag">Figma</span>
+            </div>
+          </article>
+
+          <article class="card" tabindex="0">
+            <div class="thumb">
+              <img src="Screenshot (305).png">
+            </div>
+            <div class="title" data-i18n="project1Title5"> ماگ فروشگاه آنلاین</div>
+
+        
+        <div class="tags">
+          <span class="tag">React</span>
+          <span class="tag">Front-end </span>
+          <span class="tag">ui/ux</span>
+          <span class="tag">Figma</span>
+        </div></div>
+        </article>
+
+        <!-- <article class="card" tabindex="0">
+            <div class="thumb" data-i18n="project1Thumb">وب‌سایت فروشگاهی</div>
+            
+            <div class="title" data-i18n="project1Title">ShopEase — فروشگاه آنلاین</div>
+            <div class="desc" data-i18n="project1Desc">طراحی رابط کاربری و تجربه کاربری برای پلتفرم تجارت الکترونیک.
+            </div>
+            <div class="tags"><span class="tag">React</span><span class="tag">Tailwind</span><span
+                class="tag">Figma</span></div>
+          </article>
+
+          <article class="card" tabindex="0" id="nar">
+            <div class="thumb" data-i18n="project2Thumb">
+                  <img src="Screenshot 2025-11-12 120444.png" >
+            </div>
+            <div class="title" data-i18n="project2Title">AdminDash</div>
+            <div class="desc" data-i18n="project2Desc">داشبورد مدیریت با نمودارها و فیلترهای پیچیده.</div>
+            <div class="tags"><span class="tag">Vue</span><span class="tag">Chart.js</span></div>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="thumb" data-i18n="project3Thumb">پروفایل هنرمند</div>
+            <div class="title" data-i18n="project3Title">Artistfolio</div>
+            <div class="desc" data-i18n="project3Desc">گالری ساده و مینیمال برای نمایش آثار هنری.</div>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="thumb" data-i18n="project3Thumb">پروفایل هنرمند</div>
+            <div class="title" data-i18n="project3Title">Artistfolio</div>
+            <div class="desc" data-i18n="project3Desc">گالری ساده و مینیمال برای نمایش آثار هنری.</div>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="thumb" data-i18n="project1Thumb">وب‌سایت فروشگاهی</div>
+            <div class="title" data-i18n="project1Title">ShopEase — فروشگاه آنلاین</div>
+            <div class="desc" data-i18n="project1Desc">طراحی رابط کاربری و تجربه کاربری برای پلتفرم تجارت الکترونیک.
+            </div>
+            <div class="tags"><span class="tag">React</span><span class="tag">Tailwind</span><span
+                class="tag">Figma</span></div>
+          </article>
+          <article class="card" tabindex="0" id="nar">
+            <div class="thumb" data-i18n="project2Thumb">داشبورد</div>
+            <div class="title" data-i18n="project2Title">AdminDash</div>
+            <div class="desc" data-i18n="project2Desc">داشبورد مدیریت با نمودارها و فیلترهای پیچیده.</div>
+            <div class="tags"><span class="tag">Vue</span><span class="tag">Chart.js</span></div>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="thumb" data-i18n="project3Thumb">پروفایل هنرمند</div>
+            <div class="title" data-i18n="project3Title">Artistfolio</div>
+            <div class="desc" data-i18n="project3Desc">گالری ساده و مینیمال برای نمایش آثار هنری.</div>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          </article>
+          <article class="card" tabindex="0">
+            <div class="thumb" data-i18n="project3Thumb">پروفایل هنرمند</div>
+            <div class="title" data-i18n="project3Title">Artistfolio</div>
+            <div class="desc" data-i18n="project3Desc">گالری ساده و مینیمال برای نمایش آثار هنری.</div>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+          </article> -->
+        <!-- بقیه پروژه‌ها مشابه -->
+  </div>
+  </section>
+
+  <!-- مقاله -->
+  <h1 data-i18n="Article"> مقاله</h1>
+  <div class="center">
+    <div class="container">
+      <div class="item-list">
+        <div class="item">
+          <h1 data-i18n="Article1">مقاله رابطه بین سئو و جئو مکمل یا متضاد سوال</h1>
+          <p data-i18n="Article1p">سوال اصلی این است آیا ممکن جئو جای سئو رو بگیرید؟</p>
+          <a href="./رابطه بین سئو و جئو مکمل یا متضاد.zip" download class="btn-download" data-i18n="Articledon">دانلود
+            فایل</a>
+        </div>
+
+        <div class="item">
+          <h3 data-i18n="Article2">مقاله بررسی شایعات و واقعیت‌ها درباره الگوریتم گرگ گوگل و اثر آن بر سئو</h3>
+          <p data-i18n="Article2p"> الگوریتم معروف گرگ خاکستری بین سئو کاران چیست ؟</p>
+          <a href="./رابطه بین سئو و جئو مکمل یا متضاد.zip" download class="btn-download" data-i18n="Articledon">دانلود
+            فایل</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="courses">
+    <!-- <h2 data-i18n="courseh2">آموزش های من</h2> -->
+    <h2 data-i18n="h22"> آموزش های من</h2>
+    <p class="desc" data-i18n="desc0">به‌زودی پکیج‌های آموزشی من در پلتفرم‌های معتبر مثل مکتب‌خونه و با‌سلام در این
+      بخش قرار خواهند گرفت.</p>
+
+    <!-- وقتی پکیج‌ها آماده شدند، کارت‌ها را فعال کن -->
+    <div class="course-grid">
+      <!-- نمونه فعال -->
+      <article class="course coming-soon">
+        <div class="placeholder">
+          <span>در حال آماده‌سازی...</span>
+        </div>
+      </article>
+      <!-- نمونه غیرفعال برای آینده -->
+      <article class="course coming-soon">
+        <div class="placeholder">
+          <span>در حال آماده‌سازی...</span>
+        </div>
+      </article>
+      <!-- نمونه غیرفعال برای آینده -->
+      <article class="course coming-soon">
+        <div class="placeholder">
+          <span>در حال آماده‌سازی...</span>
+        </div>
+      </article>
+    </div>
+  </section>
+  <!-- برای گواهینمامه  -->
+  <button class="btn" onclick="toggleCertificates()" data-i18n="t0">مشاهده گواهینامه‌ها</button>
+  <div id="certs" class="cert-section">
+    <h3 data-i18n="h333">گواهینامه‌ها</h3>
+    <ul class="cert-list">
+      <li>
+        <div class="cert-title">seo - – </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-0L4WAZ.seo.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-0L4WAZ.se.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">SEO Keyword Research – </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-ZEU758seo-kyeword.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-ZEU758.seo-kyeword.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">JavaScript Advanced - </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-js.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-js(1).png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title"> WordPress - </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-J8470A.wordpers-pershian.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-J8470A.wordpers-englisi.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">UI/UX Design – </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-A1ZGND.ui.ux,per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-A1ZGND.ui.ux.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">Figma - </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-8Z9PC3.figma.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-8Z9PC3.figma.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">Python - </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-YPYAM3.python.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-YPYAM3.python.en.png" alt="JavaScript Certificate"><br>
+          <img src="./narges johari-MK-OBTW1J.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-OBTW1J(1).png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">HTML & CSS -</div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-55ASBH.html.css.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-55ASBH.html.css.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">Responsive Layout -</div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-LVJOCB .Responsive Layout.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-LVJOCB.Responsive Layout.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">google sheet-</div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-0ZV0Z5.googleshet.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-0ZV0Z5.googleshet.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">googleapis -</div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-TSPKY6.googleapis.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-TSPKY6.googleapis.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">googleads -</div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-IKJNU4.gooleads.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-IKJNU4.gooleads.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">lcdl - </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-0NWK36.icdl.per.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-0NWK36.icdl.en.png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">powershell- </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-power.png" alt="JavaScript Certificate">
+          <img src="./narges johari-power(1).png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title">Django- </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK-gengo.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK-gengo(1).png" alt="JavaScript Certificate">
+        </div>
+      </li>
+      <li>
+        <div class="cert-title"> CCNA- </div>
+        <div class="cert-image">
+          <img src="./narges johari-MK- CCNA.png" alt="JavaScript Certificate">
+          <img src="./narges johari-MK- CCNA(1).png" alt="JavaScript Certificate">
+        </div>
+      </li>
+  </div>
+  <!-- ویژگی‌ها -->
+  <section id="features" class="features">
+    <div class="feature">
+      <h3 data-i18n="Fully_responsive">ریسپانسیو کامل</h3>
+      <p data-i18n="text0">سایت من روی موبایل، تبلت و دسکتاپ کاملاً سازگار است و تجربه کاربری راحت و جذابی
+        ارائه می‌دهد</p>
+    </div>
+    <div class="feature">
+      <h3 data-i18n="feature2Title">سرعت بالا</h3>
+      <p data-i18n="feature2Desc">صفحات به سرعت بارگذاری می‌شوند تا کاربران بدون انتظار طولانی از محتوا و نمونه
+        کارها بازدید کنند</p>
+    </div>
+    <div class="feature">
+      <h3 data-i18n="feature3Title">قابل ویرایش</h3>
+      <p data-i18n="feature3Desc">تمام بخش‌ها کامنت‌گذاری شده‌اند و به راحتی می‌توانید آن‌ها را طبق نیاز شخصی یا
+        پروژه خود تغییر دهید</p>
+    </div>
+  </section>
+  <!-- تماس -->
+  <section id="contact" style="padding:24px 48px;">
+    <div
+      style="max-width:820px;margin:0 auto;background:rgba(255,255,255,0.02);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+      <h2 data-i18n="contactTitle">تماس با ما</h2>
+      <p class="lead" data-i18n="contactIntro">فرم زیر را تکمیل کنید تا در کمتر از ۲۴ ساعت پاسخ بگیرید.</p>
+
+      <!-- فرم Formspree -->
+      <form id="contactForm" action="https://formspree.io/f/xldaddea" method="POST">
+        <label>نام</label>
+        <input id="name" name="name" type="text" placeholder="نام شما" required>
+
+        <label>ایمیل</label>
+        <input id="email" name="email" type="email" placeholder="nargesjohari48@gmail.com" required>
+
+        <label>پیام</label>
+        <textarea id="message" name="message" rows="5" placeholder="مختصری از خواسته‌تان" required></textarea>
+
+        <button class="btn" type="submit" data-i18n="send" >ارسال پیام</button>
+        <button type="button" id="clearBtn" class="btn" data-i18n="cleear">پاک کردن</button>
+
+        <div id="formMsg" style="margin-top:12px;color:var(--accent);display:none" data-i18n="formMsg">
+          پیام ارسال شد. متشکرم!
+        </div>
+        <div id="emailError" style="margin-top:12px;color:red;display:none"></div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const clearBtn = document.getElementById('clearBtn');
+      const formMsg = document.getElementById('formMsg');
+      const emailError = document.getElementById('emailError');
+
+      // پاک کردن فرم
+      clearBtn.addEventListener('click', () => {
+        form.reset();
+        formMsg.style.display = 'none';
+        emailError.style.display = 'none';
+      });
+
+      // اعتبارسنجی و نمایش پیام موفق
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (!name || !email || !message) {
+          alert('لطفاً همه فیلدها را پر کنید.');
+          return;
+        }
+
+        // بررسی الگوی ایمیل
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          emailError.textContent = 'ایمیل وارد شده معتبر نیست.';
+          emailError.style.display = 'block';
+          emailInput.focus();
+          return;
+        } else {
+          emailError.style.display = 'none';
+        }
+
+        // ارسال فرم با Formspree
+        fetch(form.action, {
+          method: form.method,
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        }).then(response => {
+          if (response.ok) {
+            formMsg.style.display = 'block';
+            form.reset();
+          } else {
+            formMsg.textContent = 'خطایی رخ داد، دوباره تلاش کنید!';
+            formMsg.style.display = 'block';
+          }
+        }).catch(() => {
+          formMsg.textContent = 'خطایی رخ داد، دوباره تلاش کنید!';
+          formMsg.style.display = 'block';
+        });
+      });
+    });
+  </script>
+
+
+
+  </main>
+  </div>
+  <footer>
+    <button id="langSwitch" class="btn">EN</button>
+    <div data-i18n="hoghogh">
+      © تمام حقوق برای نرگس جوهری محفوظ است. 2025
+    </div>
+    <div>
+      <a href="https://www.instagram.com/n_joharix" target="_blank" aria-label="Instagram">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="mailto:nargesjohari63@gmail.com" aria-label="Email">
+        <i class="fa fa-envelope"></i>
+      </a>
+      <a href="https://t.me/n_johari" target="_blank" aria-label="Telegram">
+        <i class="fa fa-telegram"></i>
+      </a>
+      <a href="" target="_blank" aria-label="LinkedIn">
+        <i class="fa fa-linkedin-square"></i>
+      </a>
+      <a href="" target="_blank" aria-label="Website">
+        <i class="fa fa-globe"></i>
+      </a>
+    </div>
+  </footer>
+
+
+  <script src="./script.js"></script>
+  <!-- i18next translation script -->
+  
+</body>
+
+</html>
