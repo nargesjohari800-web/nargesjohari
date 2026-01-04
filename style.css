@@ -53,6 +53,18 @@ body {
   height: 80px;
   border-radius: 50%;
 }
+/* حذف رنگ آبی لینک‌ها در نمونه کارها */
+.portfolio a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* برای اطمینان در حالت hover و visited */
+.portfolio a:hover,
+.portfolio a:visited,
+.portfolio a:active {
+  color: inherit;
+}
 
 /* =================== بزرگ و کوچک شدن عکس پروفایل =================== */
 /* #portfolio {
@@ -1216,4 +1228,5 @@ footer a {
   height: 100%;
   object-fit: cover;    /* عکس رو بزرگ کنه ولی نسبت حفظ بشه و بریده نشه */
   display: block;
+
 }
